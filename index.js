@@ -1,14 +1,12 @@
 const express = require('express');
 const app = express();
-const Web3 = require('web3');
-const dotenv = require('dotenv')
 // Import Route
-const transRoute = require('./routes/account')
+const metamaskRoute = require('./routes/metamask')
 
-dotenv.config();
 app.use(express.json());
-app.use('/api/infura',transRoute)
-
+// middleware
+app.use('/metamask',metamaskRoute)
+//connect to server
 app.listen(3000, function() {
     console.log('Server Up and Running...')
 })
