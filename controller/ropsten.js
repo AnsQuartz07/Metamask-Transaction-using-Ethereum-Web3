@@ -1,9 +1,10 @@
 const router = require('express').Router();
 const Web3 = require('web3');
+const url = 'https://ropsten.infura.io/v3/6bd8fee777ac4a1d88c86bd651a2a3fb'
 
 module.exports = {
     transaction : async (req,res) => {
-        const web3 = new Web3(req.body.link);
+        const web3 = new Web3(url);
         console.log(
            `Attempting to make transaction from ${req.body.from} to ${req.body.to}`
         );
@@ -28,7 +29,7 @@ module.exports = {
         res.status(200).json({message:`Transaction successful with hash: ${createReceipt.transactionHash}`})
     },
     balance : async (req,res) => {
-        const web3 = new Web3(req.body.link);
+        const web3 = new Web3(url);
         const balance = web3.utils.fromWei(
            await web3.eth.getBalance(req.body.id),
            'ether'
