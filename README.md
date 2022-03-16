@@ -5,14 +5,14 @@ Body for api testing on postman : <br/>
 Request-type : Get
 Format : json
 1. Transaction : 
-{
-    "from": user's metamask id,
-    "to": Another metamask id,
-    "value": amount,
-    "gas": gas amount,
-    "privkey": User's private key of metamask account
+{<br/>
+    "from": user's metamask id,<br/>
+    "to": Another metamask id,<br/>
+    "value": amount,<br/>
+    "gas": gas amount,<br/>
+    "privkey": User's private key of metamask account<br/>
 }
 2. Balance Checking :
-{
-    "id": user's metamask id
+{<br/>
+    "id": user's metamask id<br/>
 }
